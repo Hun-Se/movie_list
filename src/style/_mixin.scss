@@ -1,0 +1,123 @@
+@import "_variavles.scss";
+
+
+@mixin min {
+    @media (max-width: #{$breakpoint-mobile}) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (min-width: #{$breakpoint-mobile}) and (max-width: #{$breakpoint-tablet - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - 1px}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$breakpoint-desktop}) {
+        @content;
+    }
+}
+
+//font
+
+@mixin font-style-13() {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 19px;
+}
+@mixin font-style-14() {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+@mixin font-style-16() {
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 23px;
+}
+
+@mixin font-style-24 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+}
+
+// card-style 
+@mixin card-img ($width, $radius) {
+    width: $width;
+    border: 1px solid #BDBDBD;
+    box-sizing: border-box;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: $radius;
+}
+
+@mixin content-card () {
+    .card-title {
+        @include font-style-16();
+        text-align: center;
+        margin-top: 11px
+    }
+
+    .list-info {
+        margin-top: 12px;
+
+        li {
+            margin-top: 5px;
+            margin-right: 5px;
+            @include font-style-13();
+            color: $gray;
+
+            span {
+                @include font-style-13();
+                color: $black;
+            }
+        }
+
+        .wrap-grade {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}
+
+//btn-style
+@mixin btn {
+    .wrap-btn {
+        @include font-style-14();
+        background-color: $bg;
+        position: relative;
+        .btn-reserve {
+            padding: 9px 27px;
+            text-align: center;
+        }
+
+        .btn-line {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 0px;
+            border: 1px solid #BDBDBD;
+        }
+
+        .btn-vedio {
+            display: inline-block;
+            padding: 9px 27px;
+            text-align: center;
+        }
+
+        .img-play {
+            display: inline-block;
+            vertical-align: text-top;
+            width: 13px;
+            height: 13px;
+        }
+    }
+}
