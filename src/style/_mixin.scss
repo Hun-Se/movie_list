@@ -32,6 +32,7 @@
     font-weight: 400;
     line-height: 19px;
 }
+
 @mixin font-style-14() {
     font-size: 14px;
     font-weight: 500;
@@ -44,6 +45,12 @@
     line-height: 23px;
 }
 
+@mixin font-style-22 {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+}
+
 @mixin font-style-24 {
     font-size: 24px;
     font-weight: 700;
@@ -51,7 +58,7 @@
 }
 
 // card-style 
-@mixin card-img ($width,$height,$radius) {
+@mixin card-img ($width, $height, $radius) {
     width: $width;
     height: $height;
     border: 1px solid #BDBDBD;
@@ -93,9 +100,10 @@
 @mixin btn {
     .wrap-btn {
         background-color: $bg;
-        position: relative;
+        display: flex;
+        border-top: 1px solid #BDBDBD;
+
         .btn-reserve {
-            position: absolute;
             margin: auto;
             @include font-style-14();
             padding: 9px 27px;
@@ -103,6 +111,7 @@
         }
 
         .btn-line {
+            display: inline-block;
             width: 0px;
             border: 1px solid #BDBDBD;
         }
